@@ -1,0 +1,47 @@
+
+global:
+    api-listen-addr: :5183
+    timeout: 10s
+    memo: Conqueror#1312
+    light-cache-size: 20
+chains:
+    GAIA:
+        type: cosmos
+        value:
+            key: yourkeyname
+            chain-id: GAIA
+            rpc-addr: http://138.68.134.192:23657
+            account-prefix: cosmos
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0uatom
+            debug: true
+            timeout: 20s
+            output-format: json
+            sign-mode: direct
+    stride:
+        type: cosmos
+        value:
+            key: yourkeyname
+            chain-id: STRIDE-TESTNET-2
+            rpc-addr: http://62.171.162.229:16657
+            account-prefix: stride
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0ustrd
+            debug: true
+            timeout: 20s
+            output-format: json
+            sign-mode: direct
+paths:
+    conqueror_path:
+        src:
+            chain-id: STRIDE-TESTNET-2
+            client-id: 07-tendermint-103
+            connection-id: connection-189
+        dst:
+            chain-id: GAIA
+            client-id: 07-tendermint-21
+            connection-id: connection-138
+        src-channel-filter:
+            rule: ""
